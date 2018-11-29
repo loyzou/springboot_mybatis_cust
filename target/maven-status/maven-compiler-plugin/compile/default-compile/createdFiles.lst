@@ -1,0 +1,7 @@
+org\xxjr\cust\service\LoyService.class
+org\xxjr\cust\entity\Loy.class
+org\xxjr\cust\mapper\LoyMapper.class
+org\xxjr\cust\api\controller\CustController.class
+org\xxjr\cust\BaseController.class
+org\xxjr\cust\CustApplication.class
+org\xxjr\cust\service\impl\LoyServiceImpl.class

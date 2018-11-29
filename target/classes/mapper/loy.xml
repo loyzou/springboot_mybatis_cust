@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.xxjr.cust.mapper.LoyMapper">
+    <select id="queryName" parameterType="map" resultType="org.xxjr.cust.entity.Loy">
+		SELECT * FROM T_LOY
+	</select>
+
+	<!--通过id查询用户信息 -->
+	<select id="queryCustInfo" parameterType="int" resultType="map">
+		SELECT t.name,t.customerId FROM T_LOY t where t.customerId = #{customerId}
+	</select>
+	
+	<!--添加用户信息 -->
+	<insert id="addCustInfo" parameterType="map">
+		INSERT INTO t_loy
+		(
+			customerId,
+			name
+		)
+		values
+		(
+			#{customerId},
+			#{name}	
+		)
+	</insert>
+	
+	<select id="queryCustList" parameterType="map" resultType="map">
+		select * from T_LOY t 
+		<where>
+			<if test="name !=null and name !=''">
+				and name = #{name}
+			</if>
+		</where>
+	</select>
+	
+</mapper>
